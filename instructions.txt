@@ -1,3 +1,1 @@
-First, read these instructions on getting started!
-
-Here's what's in this project...
+this is the other branch
