@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+	
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<meta name="description" content="">
+	<meta name="Keywords" content="">
+    <meta name="author" content="">
+	<title></title>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Custom CSS -->
+<style>
+	.buttons {
+		width: 350px;
+	}
+	main {
+		max-width: 50%;
+		border: 1px solid black;
+	}
+	button {
+		height: 3em;
+		width: 5em;
+	}
+	.display {
+		height: 3em;
+		border: 3px solid black;
+		margin: 20px;
+	}
+</style>
+</head>
+<body>
+	<main class="container">
+
+		<section class="display">			
+		</section>
+		<section class="buttons">
+			<button id="one" class="number">1</button>
+			<button id="two" class="number">2</button>
+			<button class="number">3</button>
+			<button class="operator">/</button>
+
+			<button class="number">4</button>
+			<button class="number">5</button>
+			<button class="number">6</button>
+
+			<button class="operator">*</button>
+			<button class="number">7</button>
+			<button class="number">8</button>
+			<button class="number">9</button>
+			<button class="operator">-</button>
+			
+			<button class="number">0</button>
+			<button id="clear">Clear</button>
+			<button class="operator" id="equals">=</button>
+			<button class="operator">+</button>
+		</section>
+	</main>
+	<!-- minified jQuery -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+	<!-- Your custom JS goes here -->
+	<script type="text/javascript">
+		"use strict";
+		
+		var display = document.getElementsByClassName("display")[0];
+
+		var numbers = document.getElementsByClassName("number");
+
+		function displayNumber() {
+			// append the display's inner text with the innerText of the button clicked
+			
+			if (middleDisplay.value == "" && leftDisplay != "") {
+				leftDisplay.value += this.innerText;
+			} else {
+				rightDisplay.value += this.innerText;
+			}
+		}
+
+		for(var i = 0; i < numbers.length; i++) {
+			numbers[i].addEventListener("click", displayNumber);
+
+			console.log("added an event listener to the following element: ");
+			console.log(numbers[i]);
+		}
+
+		document.getElementById("clear").addEventListener("click", function() {
+			leftDisplay.innerText = "";
+			operatorDisplay.innerText = "";
+			rightDisplay.innerText = "";
+		});
+
+		document.getElementById("equals").addEventListener("click", function() {
+			var result;
+
+			if(operatorDisplay.innerText == "+") {
+				result = leftDisplay.innerText + rightDisplay.innerText;
+			} else if(operatorDisplay.innerText == "-") {
+				result = leftDisplay.innerText - rightDisplay.innerText;
+			}
+
+			leftDisplay.innerText = result;
+			operatorDisplay.innerText = "";
+			rightDisplay.innerText = "";
+			
+			// check the operatorDisplay
+			// if operatorDisplay is "+"
+			// do math on leftDisplay + rightDisplay 
+			// update left display with the result
+			// clear out right display and operator display
+		});
+		
+	</script>
+
+</body>
+</html>

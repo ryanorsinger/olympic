@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Functions Extras</title>
+</head>
+<body>
+	<h1>Extra Functions Practice</h1>
+
+<script>
+	"use strict";
+	// 1. Write a function definition for a function named "log" that takes in a single variable and logs it to the JS console. 
+	// 2. Create a variable called "result" and assign it the value of the function call. 
+	// 3. What is the value and data type stored in the variable called "result"
+	
+	function log(input) {
+		console.log(input);
+	}
+
+	var result = log("Bob");
+	console.log(result);
+
+	result = log(42);
+	console.log(result);
+
+	// Then
+	// 1. Write a function called "identity" that takes in a single variable and returns it.
+	// 2. Create a variable called "result" and assign it the value of the function call. 
+	// 3. What is the value and data type stored in the variable called "result"
+	function identity(input) {
+		return input;
+	}
+
+	result = identity("Bob");
+	console.log(result);
+
+	// Write a function called getRandomIntBetween(min, max) that takes in a min and max parameter and returns a random int between those numbers.
+
+	function getRandomIntBetween(min, max) {
+		return Math.ceil(Math.random() * (max - min)) + min;
+	}
+
+	var random = getRandomIntBetween(1, 100);
+
+	// Write a function called isNumeric(input) that takes in the input and returns true/false if the input is a number or string containing a number
+	function isNumeric(input) {
+		// how to check if a value is numeric in javascript
+		return !isNaN(input);
+	}
+
+	result = isNumeric("pineapple");
+	console.log("It is " + result + " that \"pineapple\" is numeric");
+
+	console.log("it is " + isNumeric(3.141) + " that 3.1414 is numeric");
+
+	var a = 5;
+	var b = 3;
+
+	function add(a, b) {
+		if(isNumeric(a) && isNumeric(b)) {
+			return a + b;
+		}
+	}
+
+	function subtract(a, b) {
+		return a - b;
+	}
+
+	function multiply(a, b) {
+		return a * b;
+	}
+
+	function divide(a, b) {
+		return a / b;
+	}
+
+	function square(num) {
+		return multiply(num, num);
+	}
+
+	// BONUS:
+	// write a function definition called sumOfSquares(a,b)
+	// that only uses the add() and multiply() or square() functions from above
+	// so sumOfSquares(2, 3) should return 13
+
+	function sumOfSquares(a, b) {
+		// return a*a + b*b;
+		// return square(a) + square(b);
+		// return sum(square(a), square(b));
+		return add(multiply(a, a), multiply(b, b));
+	}
+
+	console.log(sumOfSquares(2, 3));
+</script>
+</body>
+</html>

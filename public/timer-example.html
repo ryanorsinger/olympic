@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script type="text/javascript">
+	"use strict";
+
+	// var answer = confirm("Do you want to end the timer?");
+	
+	// var timeoutId = setTimeout(function() {
+	// 	if(answer) {
+	// 		clearTimeout(timeoutId);
+	// 	}
+	// 	console.log("boom");
+	// }, 3000);
+
+
+	// calls the function as a loop with the delay
+	var delay = 800;
+	
+	var i = 0;
+	var intervalId = setInterval(function() {
+		console.log(i);
+		i++;
+		if(i >= 10) {
+			clearInterval(intervalId);
+		}
+ 	}, delay);
+
+
+
+
+</script>
+</body>
+</html>
