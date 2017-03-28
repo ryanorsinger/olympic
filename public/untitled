@@ -1,0 +1,20 @@
+
+# Agenda
+
+- review the big picture
+	what's the front end's job - show content
+		UI = links to click, forms to submit
+		front end exists to send requests or get requests from a user
+	
+	back end = listen for requests, serves back response`s
+		data, security, serving data to client
+		storage, controlling what a user sees
+
+- real world application
+	GET requests == searching for stuff
+	w/ GET requests, the URL is the API
+
+- walk through counter
+- check on the ping/pong
+- step-by-step the ping/pong
+- POST requests

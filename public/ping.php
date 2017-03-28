@@ -1,3 +1,28 @@
+<?php
+
+var_dump($_GET);
+
+// on page load, set counter to 0
+// make a button or link that increments the counter by 1
+// make a button or link that decreases the counter by 1
+// add up over time
+
+function pageController() {
+	$data = [];
+	
+	//if a value exists, get that value and assign to variable, else assign default value
+	if(isset($_GET['count']) && is_numeric($_GET['count'])) {
+		$data['count'] = $_GET['count'];
+	} else {
+		$data['count'] = 0;
+	}
+
+	return $data;
+}
+
+extract(pageController());
+
+?>
 <!DOCTYPE html>
 <html lang="en-us">
 <head>
@@ -9,12 +34,7 @@
 	<meta name="description" content="">
 	<meta name="Keywords" content="">
     <meta name="author" content="">
-	<title></title>
-	<style type="text/css">
-		li {
-			font-size: 3em;
-		}
-	</style>
+	<title>Counter Example</title>
 
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -23,23 +43,14 @@
 <style></style>
 </head>
 <body>
+	<main class="container">
+		<h1>Ping!</h1>
+		<h1>Counter: <?= $count ?></h1>
+		<a class="btn btn-primary" href="pong.php?count=<?= $count +1 ?>">Hit</a>
+		<a class="btn btn-primary" href="pong.php?count=0">Miss</a>
 
-	<main>
-		<!-- all your content -->
-		<h1 id="greeting">Hello World</h1>
-		<h2>Programming Languages In Codeup</h2>
-		<ul>
-			<li id="myFirstLanuage">HTML</li>
-			<li id="css">CSS</li>
-			<li>JS</li>
-			<li>PHP</li>
-			<li>MySQL</li>
-		</ul>
-		<p>One</p>
+
 	</main>
-	<footer>
-		<!-- copyright info on footer -->
-	</footer>
 	<!-- minified jQuery -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 
@@ -47,13 +58,7 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
 	<!-- Your custom JS goes here -->
-	<script type="text/javascript">
-		
-		$("li").hover(function() {
-			$(this).css("background-color", "salmon");
-		})
-
-	</script>
+	<script type="text/javascript"></script>
 </body>
 </html>
 

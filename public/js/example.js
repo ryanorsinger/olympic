@@ -1,9 +1,49 @@
 "use strict";
-var message = "Howdy, everybody!~";
-var favoriteNumber = 23;
 
-console.log(message);
+var dataTypesInJS = [
+	'null',
+	'boolean',
+	'number',
+	'undefined',
+	'string',
+	'function',
+	'array',
+	'object'
+];
 
-message = "Goodbye, everybody! Have a great JavaScripty Monday night!";
 
-console.log(message);
+// write a function that checks to see if today is Friday
+// name the function isFriday;
+// function parameter is a string containing the day of the week
+// the parameter should be called currentDay
+
+function isFriday(today) {
+ 	if(today == "friday" || today == "Friday") {
+ 		return true;
+ 	} else {
+ 		return false;
+ 	}
+}
+
+
+var today = "Wednesday";
+
+if(isFriday(today)) {
+	document.getElementById("messageOfTheDay").innerText = "TGIF";
+} else {
+	document.getElementById("messageOfTheDay").innerText = "get back to to work :D";
+}
+
+
+
+
+
+
+
+
+
+
+
+document.addEventListener("keyup", function(event) {
+
+})
